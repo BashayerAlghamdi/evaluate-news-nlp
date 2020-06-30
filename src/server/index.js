@@ -40,7 +40,7 @@ app.post('/add', function(req,res){
     }, function(error, response) {
         if (error === null) {
             console.log(response);
-            res.send(response)
+            res.send(response);
         }
     })
 })

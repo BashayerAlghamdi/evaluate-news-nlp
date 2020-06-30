@@ -7,19 +7,19 @@ function handleSubmit(event) {
 
     console.log("::: Form Submitted :::")
     
-    fetch('/api',{
+    fetch('/add',{
         method: 'POST',
         credentials: 'same-origin', 
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formText)
+        body: JSON.stringify({content:formText})
     })
     .then(res => {
         return res.json()
     })
     .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
+        document.getElementById('results').innerHTML = res.polarity
         console.log(res);
     })
 }
